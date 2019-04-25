@@ -1643,3 +1643,16 @@ td {
 .katex .mtable .col-align-r > .vlist {
   text-align: right;
 }
+
+      .main {
+        background: #868e96;
+      }
+    
+      body {
+        background: #ced4da;
+      }
+    
+      a {
+        color: #3b5bdb;
+      }
+    
