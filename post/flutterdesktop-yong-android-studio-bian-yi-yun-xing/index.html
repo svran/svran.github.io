@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>flutterDesktop用Android Studio编译运行 | Svran</title>
+<meta name="description" content="-------------------------------------------------">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://svran.github.io/favicon.ico?v=1558680443698">
+<link rel="stylesheet" href="https://svran.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://svran.github.io">
+        <img src="https://svran.github.io/images/avatar.png?v=1558680443698" class="site-logo">
+        <h1 class="site-title">Svran</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://svran.github.io/post/about/" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      -------------------------------------------------
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>　｜　我的<a href="https://github.com/svran">GitHub</a><!--　｜　所使用<a href="https://github.com/GalaxySuze/gridea-theme-space">主题</a> -->
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">flutterDesktop用Android Studio编译运行</h2>
+            <div class="post-date">2019-05-24</div>
+            
+              <div class="feature-container" style="background-image: url('https://svran.github.io/post-images/flutterdesktop-yong-android-studio-bian-yi-yun-xing.png')">
+              </div>
+            
+            <div class="post-content">
+              <p>这篇文章,是基于Windows 10 1903 的如果你是用的其他系统,可能当前教程不适合,当然也可以做参考</p>
+<!-- more -->
+<h4 id="需要准备">需要准备:</h4>
+<ul>
+<li>正常的 windows 10 系统 电脑一台</li>
+<li>正常的网络环境</li>
+<li>硬盘剩余空间 &gt; 10G</li>
+<li>正常的flutter环境 (flutter环境的搭建网上资料很多,一找一大片)</li>
+<li>Android Studio 3.4.1 <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows.zip">AS3.4.1下载</a></li>
+<li>Visual Studio 2017 或者 2019 (我用的2019社区版) <a href="https://visualstudio.microsoft.com/zh-hans/vs/">VS2019</a></li>
+</ul>
+<p>接下来, Visual Studio 简称为VS,　Android Studio简称为AS</p>
+<h4 id="步入正题">步入正题:</h4>
+<ul>
+<li>克隆项目 <a href="https://github.com/google/flutter-desktop-embedding">flutter-desktop-embedding</a><br>
+项目克隆路径为你的flutter所在目录<br>
+<img src="https://svran.github.io/post-images/1558670435736.jpg" alt=""></li>
+<li>安装VS,选择&quot;使用C++的桌面开发&quot; <strong>记住安装路径,后边要用!</strong><br>
+<img src="https://svran.github.io/post-images/1558669566215.jpg" alt=""></li>
+<li>安装完成VS之后,将安装路径下的&quot;\2019\Community\VC\Auxiliary\Build&quot;<strong>完整路径</strong>添加环到境变量path;<br>
+<img src="https://svran.github.io/post-images/1558669831975.jpg" alt=""><br>
+<img src="https://svran.github.io/post-images/1558670001626.jpg" alt=""></li>
+<li>AS 安装上flutter插件 flutter i18n插件 dart插件,重启AS;<br>
+<img src="https://svran.github.io/post-images/1558679662379.jpg" alt=""></li>
+<li>把flutter分支切换到master,启动AS,打开flutter-desktop-embedding目录中的example项目;</li>
+<li>等项目加载完毕,打开AS底部的Terminal,运行(如果没有这个面板,可以在view -&gt; Tool Windows -&gt; Terminal 打开):</li>
+</ul>
+<pre><code>set ENABLE_FLUTTER_DESKTOP=true
+</code></pre>
+<p>然后运行查看是否设置成功,</p>
+<pre><code>flutter devices 
+</code></pre>
+<p>如果成功的话,会有设备列表;<br>
+接下来就是运行项目了</p>
+<pre><code>flutter run
+</code></pre>
+<p>多设备的情况下,会提醒多个设备.指定设备即可:</p>
+<pre><code>flutter run -d windows
+</code></pre>
+<p><img src="https://svran.github.io/post-images/1558677960940.jpg" alt=""></p>
+<h4 id="我所遇到的错误-以及排除方案">我所遇到的错误 以及排除方案:</h4>
+<ul>
+<li>运行报错: unable to build: could not find vcvars64.bat<br>
+检查环境变量path中,vs中build目录中vcvars64.bat 文件所在的路径是否正确.路径需要<strong>完整路径</strong>比如我的,默认路径:&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build&quot;</li>
+<li>运行报错:</li>
+</ul>
+<pre><code>Build process failed
+'xxx\windows\build.bat' is not recognized as an internal or external command,
+operable program or batch file.
+</code></pre>
+<p>可能是因为flutter没有切换到master分支,<br>
+因为截止2019年5月24日写这篇文章之时,desktop正式版还没release,需要切换到msater分支才有desktop支持;<br>
+如果desktop已经release了,那么就试着运行 flutter doctor 遵循flutter的指引升级到最新版吧.</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://svran.github.io/tag/-K9XFdSqw" class="tag">
+                    windows
+                  </a>
+                
+                  <a href="https://svran.github.io/tag/tPl_bYhLd" class="tag">
+                    AndroidStudio
+                  </a>
+                
+                  <a href="https://svran.github.io/tag/KINieO35Y" class="tag">
+                    flutter
+                  </a>
+                
+                  <a href="https://svran.github.io/tag/ZQMngBULa" class="tag">
+                    dart
+                  </a>
+                
+                  <a href="https://svran.github.io/tag/7ZYt1ECE5" class="tag">
+                    学习
+                  </a>
+                
+                  <a href="https://svran.github.io/tag/ezHEPCnUD" class="tag">
+                    app
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://svran.github.io/post/flutter-de-json-jie-xi-wen-ti">
+                  <h3 class="post-title">
+                    flutter的json解析问题
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
