@@ -9,7 +9,7 @@
 <meta name="description" content="-------------------------------------------------">
 <meta name="theme-color" content="#000">
 <title>Svran</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1611558352900">
+<link rel="shortcut icon" href="/favicon.ico?v=1611714666581">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -203,10 +203,22 @@
   </div>
   
     
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://svran.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
   
   
 
 
+
+  <div style="width: 100%; position: relative;">
+    <canvas id="canvasDiyBlock" style="width:100%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+    <script src="/media/js/magic/clock.js"></script>
+  </div>
 
 </div>
 </div>
@@ -284,6 +296,13 @@
   
   
   
+  <div class="bg-img">
+    <img src="/media/images/custom-bgImg.jpg" />
+  </div>
+  
+  
+  
+  
 <link rel="stylesheet" href="/media/live2d/css/live2d.css" />
 <div class="box-scale">
   <div id="landlord" style="left: 5px;bottom: px;"
@@ -308,11 +327,15 @@
         <div class="live_ico_item type_info" id="showInfoBtn"></div>
         <div class="live_ico_item type_talk" id="showTalkBtn"></div>
         
+        <div class="live_ico_item type_music" id="musicButton"></div>
+        
         <div class="live_ico_item type_youdu" id="youduButton"></div>
         <div class="live_ico_item type_quit" id="hideButton"></div>
         <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
         <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
         <input id="duType" value="douqilai" type="hidden">
+        
+        <input name="live2dBGM" value="http://www.ihaoge.net/kw/antiserver.kuwo.cn/anti.s?rid=MUSIC_62858393&amp;response=res&amp;format=mp3|aac&amp;type=convert_url&amp;br=128kmp3&amp;agent=iPhone&amp;callback=getlink&amp;jpcallback=getlink.mp3" type="hidden">
         
       </div>
     
@@ -952,7 +975,7 @@
   }
 
   // 链接跳转
-  let newWindow = 'false'
+  let newWindow = 'true'
   if (newWindow === 'true') {
     let links = document.querySelectorAll('.post-body a')
     links.forEach(item => {
@@ -1478,7 +1501,11 @@ operable program or batch file.
 <script src="/media/js/mouse/love.js"></script>
 
 
+<script src="/media/js/cool.js"></script>
 
+
+
+<script src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/sakura.js"></script>
 
 
 </html>
